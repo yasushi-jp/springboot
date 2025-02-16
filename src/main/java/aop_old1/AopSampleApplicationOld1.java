@@ -1,29 +1,25 @@
-package aop;
+package aop_old1;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class AopSampleApplication {
+public class AopSampleApplicationOld1 {
 
-//	@Autowired
-//	MyService myService;
+	@Autowired
+	MyService myService;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(AopSampleApplication.class, args);
+		SpringApplication.run(AopSampleApplicationOld1.class, args);
 	}
 
     @Bean
-    CommandLineRunner run(MyService myService) {
+    CommandLineRunner run() {
         return args -> {
           myService.execute();
         };
     }
-
-//	@Override
-//	public void run(String... args) throws Exception {
-//      myService.execute();
-//	}
 }
