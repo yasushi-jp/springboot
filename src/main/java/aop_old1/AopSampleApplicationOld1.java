@@ -5,8 +5,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+
+import common.MyService;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"common", "aop_old1"})
 public class AopSampleApplicationOld1 {
 
 	@Autowired
