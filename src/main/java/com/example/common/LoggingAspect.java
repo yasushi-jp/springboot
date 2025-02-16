@@ -1,4 +1,4 @@
-package common;
+package com.example.common;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect {
 
-	@Around("execution(* common.MyService.*(..))") // "com.example.service" パッケージ内のすべてのメソッドに適用
+	@Around("execution(* com.example.common.MyService.*(..))") // "com.example.service" パッケージ内のすべてのメソッドに適用
 	public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
 
 		System.out.println("[AOP-LOG] Method " + joinPoint.getSignature().getName() + " is starting...");
